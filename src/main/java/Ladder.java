@@ -1,8 +1,23 @@
+import java.util.Arrays;
+
 public class Ladder {
+    private final Row[] rows;
+    private final int numberOfPerson;
 
-    private final int[][] rows;
+    Ladder(Row[] rows, int numberOfPerson) {
+        this.rows = rows;
+        this.numberOfPerson = numberOfPerson;
+    }
 
-    public Ladder(int row, int numberOfPerson) {
-        rows = new int[row][numberOfPerson];
+    public int getHeight() {
+        return rows.length;
+    }
+
+    public int getNumberOfPerson() {
+        return numberOfPerson;
+    }
+
+    public Row[] getRows() {
+        return Arrays.copyOf(rows, rows.length);
     }
 }
